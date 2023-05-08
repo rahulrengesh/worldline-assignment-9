@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/ava.css" />
+    <title>Booking page</title>
+  </head>
+  <body onload="startTimer()">
+    
+    <div class="movie-container">
+      <label>Pick a movie:</label>
+      <select id="movie">
+        <option value="110">Vikram (Rs.110)</option>
+        <option value="140">PS 2 (Rs.140)</option>
+        <option value="100">Varisu (Rs.100)</option>
+        <option value="150">RRR (Rs.150)</option>
+      </select>
+    </div>
+    <div class="movie-container">
+      <span>What time ?</span>
+      <select name="people" id="people" required>
+          <option value=""><---Show---></option>
+          <option value="1">11:30 PM</option>
+          <option value="2">2:30 PM</option>
+          <option value="3">6:30 PM</option>
+         
+      </select>
+  </div>
+  <div class="movie-container">
+      <span>What is the date ?</span>
+      <input type="date" name="date" id="date" placeholder="date" required>
+  </div>
+  <h2 style="color: red;">NEXT SHOW IN</h2>
+  <p id="timer">Timer</p>
+    <ul class="showcase">
+      <li>
+        <div class="seat"></div>
+        <small>N/A</small>
+      </li>
+
+      <li>
+        <div class="seat selected"></div>
+        <small>Selected</small>
+      </li>
+
+      <li>
+        <div class="seat occupied"></div>
+        <small>Occupied</small>
+      </li>
+    </ul>
+
+    <div class="container">
+      <div class="screen"></div>
+      <div class="row">
+        <div class="seat" id="1"></div>
+        <div class="seat" id="2"></div>
+        <div class="seat" id="3"></div>
+        <div class="seat" id="4"></div>
+        <div class="seat" id="5"></div>
+        <div class="seat" id="6"></div>
+        <div class="seat" id="7"></div>
+        <div class="seat" id="8"></div>
+        <div class="seat" id="9"></div>
+        <div class="seat" id="10"></div>
+        <div class="seat" id="11"></div>
+      </div>
+      <div class="row">
+        <div class="seat" id="12"></div>
+        <div class="seat" id="13"></div>
+        <div class="seat occupied" id="14"></div>
+        <div class="seat occupied" id="15"></div>
+        <div class="seat" id="16"></div>
+        <div class="seat" id="17"></div>
+        <div class="seat" id="18"></div>
+        <div class="seat occupied" id="19"></div>
+        <div class="seat" id="20"></div>
+        <div class="seat" id="21"></div>
+        <div class="seat occupied" id="22"></div>
+      </div>
+      <div class="row">
+        <div class="seat occupied" id="23"></div>
+        <div class="seat" id="24"></div>
+        <div class="seat" id="25"></div>
+        <div class="seat occupied" id="26"></div>
+        <div class="seat" id="27"></div>
+        <div class="seat" id="28"></div>
+        <div class="seat" id="29"></div>
+        <div class="seat" id="30"></div>
+        <div class="seat occupied" id="31"></div>
+        <div class="seat" id="32"></div>
+        <div class="seat" id="33"></div>
+      </div>
+      <div class="row">
+        <div class="seat" id="34"></div>
+        <div class="seat" id="35"></div>
+        <div class="seat" id="36"></div>
+        <div class="seat" id="37"></div>
+        <div class="seat" id="38"></div>
+        <div class="seat" id="39"></div>
+        <div class="seat" id="40"></div>
+        <div class="seat occupied" id="41"></div>
+        <div class="seat occupied" id="42"></div>
+        <div class="seat" id="43"></div>
+        <div class="seat occupied" id="44"></div>
+      </div>
+      <div class="row">
+        <div class="seat" id="45"></div>
+        <div class="seat" id="46"></div>
+        <div class="seat" id="47"></div>
+        <div class="seat" id="48"></div>
+        <div class="seat" id="49"></div>
+        <div class="seat" id="50"></div>
+        <div class="seat" id="51"></div>
+        <div class="seat" id="52"></div>
+        <div class="seat" id="53"></div>
+        <div class="seat" id="54"></div>
+        <div class="seat" id="55"></div>
+      </div>
+      <div class="row">
+        <div class="seat occupied" id="56"></div>
+        <div class="seat occupied" id="57"></div>
+        <div class="seat occupied" id="58"></div>
+        <div class="seat" id="59"></div>
+        <div class="seat occupied" id="60"></div>
+        <div class="seat occupied" id="61"></div>
+        <div class="seat" id="62"></div>
+        <div class="seat occupied" id="63"></div>
+        <div class="seat occupied" id="64"></div>
+        <div class="seat occupied" id="65"></div>
+        <div class="seat" id="66"></div>
+      </div>
+      <div class="row">
+        <div class="seat occupied" id="67"></div>
+        <div class="seat" id="68"></div>
+        <div class="seat" id="69"></div>
+        <div class="seat" id="70"></div>
+        <div class="seat occupied" id="71"></div>
+        <div class="seat occupied" id="72"></div>
+        <div class="seat" id="73"></div>
+        <div class="seat" id="74"></div>
+        <div class="seat" id="75"></div>
+        <div class="seat" id="76"></div>
+        <div class="seat" id="77"></div>
+      </div>
+      <div class="row">
+        <div class="seat occupied" id="78"></div>
+        <div class="seat occupied" id="79"></div>
+        <div class="seat occupied" id="80"></div>
+        <div class="seat occupied" id="81"></div>
+        <div class="seat occupied" id="82"></div>
+        <div class="seat occupied" id="83"></div>
+        <div class="seat" id="84"></div>
+        <div class="seat occupied" id="84"></div>
+        <div class="seat occupied" id="85"></div>
+        <div class="seat occupied" id="86"></div>
+        <div class="seat occupied" id="87"></div>
+      </div>
+    </div>
+    <p class="text">
+      You have selected <span id="count">0</span> seats for a price of Rs.<span id="total">0</span>
+    </p>
+    <div id="submit1">
+      <button onclick="checkCount()">Proceed</button>
+    </div>
+    
+
+   
+    <div id="submit">
+      <a href="/index.html"><button>GO BACK</button></a>
+    </div>
+    
+    <script src="/script/booking_page.js"></script>
+  </body>
+</html>

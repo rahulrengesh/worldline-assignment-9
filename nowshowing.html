@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=1">
+<title>Now Booking</title>
+<link rel="stylesheet" type="text/css" href="css/ns.css">
+<script src="/script/now_showing.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <h2 class="logo">BOOKIFY</h2>                                                                                                                                                               2
+        <ul class="list">
+            <li><a  href="/index.html">Home</a></li>
+            <li><a   href="/booking_page.html">Booking Page</a></li>
+            <li><a  class="active" href="/nowshowing.html">Now showing</a></li>
+            <li><a href="/signup.html">Sign Up</a></li>
+        </ul>
+    </nav>
+    <input type="text" id="searchInput" placeholder="Search for a movie..." style="position: relative; top: 95px;left: 600px;">
+    <button id="searchButton" onclick="searchMovies()" style="position: relative; top: 95px;left: 600px;">Search</button>
+    <div class="genre-filter" id="genre-filter">
+        <label for="genre-select" style="color: aliceblue;">Select Genre:</label>
+        <select id="genre-select">
+          <option value="genre-action">Action</option>
+          <option value="genre-drama">Drama</option>
+          <option value="genre-thriller">Thriller</option>
+        </select>
+        <button id="filter-button" onclick="filterMovies()">Filter</button>
+        
+    </div>
+    <button id="filter-1" onclick="refreshPage()">Reset</button>
+    <p id="nores" style="display: none; color: aliceblue; position: relative; top: 300px; left: 620px;">NO RESULTS FOUND (Check spelling)</p>
+    <div class="subtitle" style="position: relative;left: 530px;"><h1 style="color: aliceblue;">NOW SHOWING - </h1><h2 style="color: red;">THRILLER MOVIES</h2></div>
+    <h3 style="color: aliceblue; position: relative; top: 90px; left: 620px;">Hover the cards to see more details</h3>
+    <div id="movies-container">
+        
+    </div>
+<div class="list">
+    <div class="row" id="genre-thriller">
+        <div class="ui-card" id="vikram">
+            <img src="images/m1.jpg">
+            <div class="description">
+                <h3>Vikram</h3>
+                <p>A high-octane action film where a special investigator is assigned a case of serial Killings, he finds the case is not what it seems to be and leading down.</p>
+                <h3 style="color: rgb(0, 162, 255);">5:30 PM</h3>
+                <a href="/booking_page.html">Book Ticket</a>
+            </div>
+        </div>
+        
+        <div class="ui-card" id="pathaan">
+            <img src="images/m4.jpg">
+            <div class="description">
+                <h3>Pathaan</h3>
+                <p>An Indian spy battles against the leader of a gang of mercenaries who have a heinous plot for his homeland.</p>
+                <h3 style="color: rgb(0, 162, 255);">12:00 PM</h3>
+                <a href="/booking_page.html">Book Ticket</a>
+            </div>
+        </div>
+        <div class="ui-card" id="kgf 2">
+            <img src="images/m6.jpg">
+            <div class="description">
+                <h3>K.G.F: Chapter 2</h3>
+                <p>Rocky successfully rises as the leader and saviour of the people of the Kolar Gold Fields. But, in his goal to fulfil his mother's wishes, Rocky must tackle Adheera, Inayat Khalil and Ramika Sen.</p>
+                <h3 style="color: rgb(0, 162, 255);">7:00 AM</h3>
+                <a href="/booking_page.html">Book Ticket</a>
+            </div>
+        </div>
+    </div>
+    <div class="subtitle" style="position: relative; left: 500px; top: 20px;"><h1 style="color: aliceblue;">NOW SHOWING - </h1><h2 style="color: red;">ACTION MOVIES</h2></div>
+    <div class="row" id="genre-action" style="position: relative;top: -100px;">
+        <div class="ui-card" id="rrr">
+            <img src="images/m3.jpg">
+            <div class="description">
+                <h3>RRR</h3>
+                <p>A fearless revolutionary and an officer in the British force, who once shared a deep bond, decide to join forces and chart out an inspirational path of freedom against the despotic rulers.</p>
+                <h3 style="color: rgb(0, 162, 255);">9:00 AM 12:00 PM</h3>
+                <a href="/booking_page.html">Book Ticket</a>
+            </div>
+        </div>
+        <div class="ui-card" id="ponniyin selvan 2">
+            <img src="images/m2.jpg">
+            <div class="description">
+                <h3>Ponniyin selvan 2</h3>
+                <p>Arulmozhi Varman continues on his quest to become Rajaraja I, the greatest ruler of south India's historic Chola empire.</p>
+                <h3 style="color: rgb(0, 162, 255);">11:30 AM 1:00 PM</h3>
+                <a href="/booking_page.html">Book Ticket</a>
+            </div>
+        </div>
+        <div class="ui-card" id="varisu">
+            <img src="images/m11.jpg">
+            <div class="description">
+                <h3>Varisu</h3>
+                <p>When his terminally ill father leaves him in charge of his business conglomerate, a prodigal son must prove his mettle and reunite his broken family.</p>
+                <h3 style="color: rgb(0, 162, 255);">2:00 PM 4:30PM</h3>
+                <a href="/booking_page.html">Book Ticket</a>
+            </div>
+        </div>
+        
+    </div>
+    <div class="subtitle" style="position: relative;left: 500px; top: 20px;"><h1 style="color: aliceblue; ">NOW SHOWING -</h1><h2 style="color: red;">DRAMA MOVIES</h2></div>
+
+    
+    <div class="row" id="genre-drama" style="position: relative; top: -100px;">
+        <div class="ui-card" id="nayakan">
+            <img src="images/m8.png">
+            <div class="description">
+                <h3>Nayakan</h3>
+                <p>It revolves around the transformation of an ordinary slum dweller named Velu into a feared don through various stages of his life.</p>
+                <h3 style="color: rgb(0, 162, 255);">2:00 PM 4:30PM</h3>
+                <a href="/booking_page.html">Book Ticket</a>
+            </div>
+        </div>
+        <div class="ui-card" id="thalapathi">
+            <img src="images/m9.png">
+            <div class="description">
+                <h3>Thalapathi</h3>
+                <p>Surya, a courageous man who gets raised in the slums, fights for the rights of the poor. However, he becomes friends with Deva, who hires him as his commander and changes his life completely.</p>
+                <h3 style="color: rgb(0, 162, 255);">11:30PM</h3>
+                <a href="/booking_page.html">Book Ticket</a>
+            </div>
+        </div>
+        <div class="ui-card" id="varanam aayiram">
+            <img src="images/m10.jpg">
+            <div class="description">
+                <h3>Varanam Aayiram</h3>
+                <p>Surya, an NSG official, is on a mission to rescue someone when he gets the news of his father's demise. He starts reminiscing about the bond he shared with his father and the stories related to him.</p>
+                <h3 style="color: rgb(0, 162, 255);">11:00 AM</h3>
+                <a href="/booking_page.html">Book Ticket</a>
+            </div>
+        </div>
+    </div>
+</div>
+<h1 style="color: aliceblue; position: relative; left: 470px;">WORLDLINE ASSIGNMENT 8</h1>
+
+</body>
+</html>

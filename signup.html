@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <title>Sign up</title>
+        <link rel="stylesheet" href="/css/signup.css">
+      
+    </head>
+    <body>
+        <div class="form" id="form" style="display: block;">
+            <div class="title">Welcome</div>
+            <div class="subtitle">Let's create your account!</div>
+            <div class="input-container ic1">
+                <input type="text" class="input" id="registration-id" name="registration-id" placeholder=" " pattern="[0-9]{2}[A-Z]{2}[0-9]{4}" required>
+                <div class="cut"></div>
+                <label for="registration-id" class="placeholder">Registration ID *</label>
+            </div>
+            <div class="input-container ic2">
+                <input type="text" id="username" class="input" name="username" placeholder=" " pattern="^[^0-9]+$" required>
+                <div class="cut"></div>
+                <label for="username" class="placeholder">Username *</label>
+            </div>
+            <div class="input-container ic2">
+                <input type="password" class="input" id="password" name="password" placeholder=" " pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$" required>
+                <div class="cut"></div>
+                <label for="password" class="placeholder">Password *</label>
+            </div>
+            <div class="input-container ic2">
+                <input type="email" id="email" class="input" name="email" placeholder=" " required>
+                <div class="cut"></div>
+                <label for="email" class="placeholder">Email *</label>
+            </div>
+            <div class="input-container ic2">
+                <input type="tel" id="mobile-number" name="mobile-number" class="input" placeholder=" " pattern="[0-9]{10}" required>
+                <div class="cut"></div>
+                <label for="mobile-number" class="placeholder">Mobile Number *</label>
+            </div>
+            <div class="input-container ic2">
+                <input type="date" id="dob" name="dob" class="input" placeholder=" " required>
+                <div class="cut"></div>
+                <label for="dob" class="placeholder">DOB *</label>
+            </div>
+            <button type="text" class="submit" onclick="return validateForm()">submit</button>
+            <button type="text" class="back" id="back" style="display: block; width: 270px;"><a href="/index.html" style="color: aliceblue; text-decoration: none; ">CANCEL</a></button>
+          </div>
+          <button type="text" class="back1" id="back1" style="display: none; width: 270px;"><a href="/index.html" style="color: aliceblue; text-decoration: none; ">GO BACK</a></button>
+    </body>
+    <script>
+        function validateForm() {
+          
+            var regId = document.getElementById("registration-id").value;
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var email = document.getElementById("email").value;
+            var mobile = document.getElementById("mobile-number").value;
+            var dob = document.getElementById("dob").value;
+         
+            var error = "";
+        
+          // validate registration ID
+          if (!regId.match(/[0-9]{2}[A-Z]{2}[0-9]{4}/)) {
+            error += "Invalid registration ID. Please enter a valid registration ID.\n";
+          }
+        
+          // validate username
+          if (username.match(/[0-9]/)) {
+            error += "Username should not contain any digits. Please enter a valid username.\n";
+          }
+        
+          // validate password
+          if (!password.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/)) {
+            error += "Password should have at least 1 digit, 1 lowercase letter, 1 uppercase letter, 1 special character, and a minimum length of 8.\n";
+          }
+        
+          // validate email
+          if (!email.match(/^\S+@\S+\.\S+$/)) {
+            error += "Invalid email address. Please enter a valid email address.\n";
+          }
+        
+          // validate mobile number
+          if (!mobile.match(/^[1-9][0-9]{9}$/)) {
+            error += "Mobile number should be exactly 10 digits and should not be entered as 0000000000. Please enter a valid mobile number.\n";
+          }
+        
+          // validate DOB
+          if (!dob.match(/^\d{4}-\d{2}-\d{2}$/)) {
+            error += "Invalid date of birth. Please enter a valid date of birth in the format YYYY-MM-DD.\n";
+          }
+        
+          // display error message if any
+          if (error) {
+            alert(error);
+            return false;
+          }
+          else{
+            alert("Welcome "+username+" Sign-up success");
+            
+            document.getElementById("back").style.display = "block";
+            document.getElementById("back1").style.display = "block";
+            document.getElementById("form").style.display = "none";
+          }
+          return true;
+        }
+                </script>
+        
+</html>
